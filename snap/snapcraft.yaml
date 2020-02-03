@@ -1,0 +1,22 @@
+name: pv-ryanjyoder 
+base: core18
+version: '1.6.6'
+summary: Monitor the progress of data through a pipe
+description: |
+  pv  shows  the  progress  of  data through a pipeline by giving information such as time elapsed, percentage completed (with progress bar), current throughput rate, total data transferred, and ETA.
+
+  To use it, insert it in a pipeline between two processes, with the appropriate options.  Its standard input will be passed through to its standard output and progress will be shown on standard error.
+
+  Because of it's confinement, it cannot read files send as positional arguments.
+
+grade: stable
+confinement: strict
+
+apps:
+  pv:
+    command: bin/pv
+
+parts:
+  pv:
+    plugin: nil
+    stage-packages: [pv]
